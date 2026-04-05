@@ -13,7 +13,7 @@ env:
   EXTRA_CMDS : "LD=ld.lld LLVM=1 LLVM_IAS=1"
 
   KERNEL_SOURCE : "https://github.com/Jan-Arbus/android_kernel_xiaomi_sm8250.git"
-  KERNEL_BRANCH : "lineage-23.0"
+  KERNEL_BRANCH : "lineage-23.2"
 
   CLANG_SOURCE : "https://github.com/LineageOS/android_prebuilts_clang_kernel_linux-x86_clang-r416183b.git"
   CLANG_BRANCH : "lineage-20.0"
@@ -32,7 +32,7 @@ env:
   KERNELSU_SOURCE : ""
   KERNELSU_BRANCH : ""
 
-  KERNELSU_AUTO_GET : "false" # if u want easy setting kernelsu, u can true.
+  KERNELSU_AUTO_GET : "true" # if u want easy setting kernelsu, u can true.
   KERNELSU_AUTO_FORK : "resukisu" # magic, rsuntk, next, resukisu and sukisu
 
   SUSFS_ENABLE : false
@@ -85,7 +85,7 @@ env:
   SKIP_PATCH: "false" # Ignore errors found in Patch Debugger.
 
   BUILD_OTHER_CONFIG: "true" # Merge config files.
-  MERGE_CONFIG_FILES: "vendor/debugfs.config,vendor/xiaomi/enuma.config"
+  MERGE_CONFIG_FILES: "vendor/debugfs.config,vendor/xiaomi/sm8250-common.config,vendor/xiaomi/enuma.config"
 
   FREE_MORE_SPACE: "false" # if u want get more space, enabled it.
 
