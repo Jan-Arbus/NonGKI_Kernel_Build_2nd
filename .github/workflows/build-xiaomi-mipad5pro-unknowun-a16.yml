@@ -10,7 +10,7 @@ env:
   DEVICE_CODENAME : "enuma"
 
   CUSTOM_CMDS : "CLANG_TRIPLE=aarch64-linux-gnu-"
-  EXTRA_CMDS : "LD=ld.lld LLVM=1 LLVM_IAS=1"
+  EXTRA_CMDS : "LD=ld.lld LLVM=1 LLVM_IAS=1 KCFLAGS=-Wno-unused-variable"
 
   KERNEL_SOURCE : "https://github.com/Jan-Arbus/android_kernel_xiaomi_sm8250.git"
   KERNEL_BRANCH : "lineage-23.2"
