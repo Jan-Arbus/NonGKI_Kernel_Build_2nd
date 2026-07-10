@@ -63,7 +63,7 @@ env:
   SUSFS_PATCH_FIXED: "" # Fill in your patches here. If there are multiple patches, please separate them with a comma. Leave it blank if there isn't one. -> patch1,patch2
 
   REKERNEL_ENABLE: "false" # if u need Re:Kernel.
-  DROIDSPACES_ENABLE: "false" # if u need Droidspaces or LXC/Docker.
+  DROIDSPACES_ENABLE: "true" # if u need Droidspaces or LXC/Docker.
 
   HOOK_METHOD: "syscall" # Manual hook method -> syscall.
 
@@ -84,7 +84,7 @@ env:
   SKIP_PATCH: "false" # Ignore errors found in Patch Debugger.
 
   BUILD_OTHER_CONFIG: "true" # Merge config files.
-  MERGE_CONFIG_FILES: "custom/debugfs.config,custom/droidspace.config,custom/droidspace_firewall.config,vendor/xiaomi/sm8250-common.config,vendor/xiaomi/enuma.config"
+  MERGE_CONFIG_FILES: "custom/debugfs.config,vendor/xiaomi/sm8250-common.config,vendor/xiaomi/enuma.config"
 
   FREE_MORE_SPACE: "false" # if u want get more space, enabled it.
 
