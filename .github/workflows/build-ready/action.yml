@@ -54,13 +54,6 @@ runs:
             if [[ -d "AnyKernel3" ]]; then
               echo "[+] Found AnyKernel3 in Kernel!"
 
-            elif [[ "${{ env.AK3_SOURCE }}" == *"osm0sis/AnyKernel3.git" ]]; then
-              git clone "${{ env.AK3_SOURCE }}" -b "${{ env.AK3_BRANCH }}" AnyKernel3
-              cd AnyKernel3
-              git checkout dca9dc370838d919d56c1f59ec78b27a14a72c68
-              cd ../
-              echo "[+] Get AnyKernel3 successfully!"
-
             else
               git clone "${{ env.AK3_SOURCE }}" -b "${{ env.AK3_BRANCH }}" AnyKernel3 --depth=1
 
@@ -247,22 +240,6 @@ runs:
 
           fi
           echo "KERNELSU_METHOD=${{ env.KERNELSU_METHOD }}" >> $GITHUB_ENV
-
-      - name: SukiSU-Ultra Fixed
-        shell: bash
-        run: |
-          cd $GITHUB_WORKSPACE/device_kernel/drivers/kernelsu
-
-          if [[ "${{ env.KERNELSU_SOURCE }}" == *SukiSU* ]] || [[ "${{ env.KERNELSU_AUTO_FORK }}" == "sukisu" ]]; then
-            cp /tmp/Patches/Patch/sukisu_ultra_fixed.patch ./
-            patch -p1 < sukisu_ultra_fixed.patch
-
-            echo "[+] SukiSU-Ultra mitigation measures implemented."
-
-          else
-            echo "[-] Your KernelSU Fork needn't it, Skipped."
-
-          fi
 
       - name: KPM Function Support
         if: env.KPM_ENABLE == 'true'

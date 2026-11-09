@@ -329,7 +329,7 @@ runs:
             echo "::group::[+] Starting install base packages..."
             pacman-key --init
             pacman -Syyu --noconfirm
-            pacman -S git base-devel systemd wget rustup curl patch ccache automake flex lzop bison gperf zip curl bzip2 squashfs-tools pngcrush schedtool make optipng maven pwgen minicom bc unzip 7zip zstd binutils gcc wget which libxml2-legacy dtc cpio lz4 z3 elfutils --noconfirm
+            pacman -S git base-devel systemd wget rustup curl patch ccache automake flex lzop bison gperf zip curl bzip2 squashfs-tools pngcrush schedtool make optipng maven pwgen minicom bc unzip 7zip zstd binutils gcc wget which libxml2-legacy dtc cpio lz4 z3 elfutils libxml2 --noconfirm
             echo "::endgroup::"
             echo "[+] The base packages is installed."
 
